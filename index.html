@@ -1,0 +1,47 @@
+<!DOCTYPE html> <html><head>
+        <title>Overflow Mini-Project</title>
+    <style>#target1{
+ width: 110px;
+ height: 110px;
+ overflow: auto;
+}
+
+
+
+body{
+    background-color:lightblue;
+    
+    }</style></head>
+    <body>
+    <canvas id="myCanvas"></canvas>
+        <input id="ipt" onchange="myFunction()" style="height:200px;font-size:15pt;">
+        <br>
+        <br>
+        <div id="target1"></div>
+    
+
+<script>
+/*__POPCODESTART__*/
+//Decoration
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var my_gradient = ctx.createLinearGradient(0, 0, 170, 0);
+my_gradient.addColorStop(0, "blue");
+my_gradient.addColorStop(0.5 ,"white");
+my_gradient.addColorStop(1, "red");
+
+//Javascript
+function myFunction(){
+  var input = document.getElementById('ipt');
+  var div = document.getElementById('target1');
+  div.innerHTML = div.innerHTML + input.value;
+}
+
+//Decoration
+ctx.font="25px Verdana";
+ctx.strokeStyle=my_gradient;
+ctx.strokeText('OverFlow Mini-Project',10,25);
+
+
+
+</script></body></html>
